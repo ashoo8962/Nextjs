@@ -34,3 +34,38 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+ssr -
+server side rendering  
+db call ntw call
+this is default behaviour
+
+ssg
+static side generation
+any conetect which doesnt have any ntw call is a static pg by default
+
+
+isg or isr
+incremental static regenratioln
+
+inc st generatn
+fetch inn nxt.js cahche response
+however,there are exceptions fetch requsts arent ccached when
+
+
+used inside a serveraction
+used inside a route handler that uses post mentod
+
+used insidrt
+
+export default async function Page() {
+  let data = await fetch('https://api.vercel.app/blog')
+  let posts = await data.json()
+  return (
+    <ul>
+      {posts.map((post) => (
+        <li key={post.id}>{post.title}</li>
+      ))}
+    </ul>
+  )
+}
